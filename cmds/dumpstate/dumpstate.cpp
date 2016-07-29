@@ -965,6 +965,7 @@ static void do_logcat() {
 
 static void dumpstate(const std::string& screenshot_path, const std::string& version) {
     DurationReporter duration_reporter("DUMPSTATE");
+    unsigned long timeout;
 
     dump_dev_files("TRUSTY VERSION", "/sys/bus/platform/drivers/trusty", "trusty_version");
     run_command("UPTIME", 10, "uptime", NULL);
